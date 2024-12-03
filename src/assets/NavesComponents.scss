@@ -1,0 +1,63 @@
+.Naves {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    justify-content: center;
+    align-items: center; 
+    margin-left: 5%;
+}
+
+.naves {
+    background-color: #111; 
+    border: 2px solid #ffd700;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.7); 
+    text-align: center;
+    width: 100%;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 85%;
+    
+  }
+  
+  .naves:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 0 30px rgba(255, 215, 0, 1); 
+  }
+  
+  .nombre, .model, .manufacturer, .cost_in_credits, .length, .max_atmosphering_speed, 
+  .crew, .passengers, .cargo_capacity, .consumables, .hyperdrive_rating, .population {
+    font-family: 'Star Wars', sans-serif;
+    font-size: 1.2em;
+    color: white; 
+    margin: 10px 0;
+    text-align: left;
+  }
+  
+  .nombre {
+    font-weight: bold;
+    color: #ffd700;
+  }
+  
+  .model, .manufacturer, .cost_in_credits, .length, .max_atmosphering_speed {
+    font-size: 1em; 
+  }
+  
+//   .naves a {
+//     text-decoration: none; 
+//   }
+  
+  .naves a:hover {
+    color: #ffd700; 
+    text-decoration: underline; 
+  }
+  
+  footer {
+    background-color: #000; 
+    color: #ffd700;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 30px;
+  }

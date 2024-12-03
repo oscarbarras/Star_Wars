@@ -1,0 +1,156 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+
+.header {
+  background-color: #000;
+  padding: 20px 20px;
+  box-shadow: 0 0 55px rgba(255, 215, 0, 0.5); 
+  min-height: 70px;
+  display: flex;
+  align-items: center; 
+  justify-content: space-evenly; 
+  width: 100%;
+  z-index: 10;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  gap: 120px;
+}
+
+.menu-item {
+  background-color: transparent;
+  color: #FFD700; 
+  border: 2px solid #FFD700; 
+  font-size: 18px;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+}
+
+.menu-item:hover {
+  background-color: #FFD700;
+  color: #000;
+  transform: scale(1.1); 
+  box-shadow: 0 0 10px rgba(255, 215, 0, 1);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.titulo {
+  background-image: url("@/assets/title2.png");
+  background-position: center top;
+  margin-top: 1%;
+  background-repeat: no-repeat;
+  background-size: 14%; 
+  height: 14vh; 
+  position: relative;
+  z-index: 5; 
+}
+
+.contenido {
+  flex: 1;
+  position: relative;
+  z-index: 10; 
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.splide {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.splide__track {
+  width: 100%;
+  height: 100%;
+}
+
+.splide__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.splide__slide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.splide__image {
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;  
+  background-color: #000; 
+  color: #fff; 
+  padding: 0px 5%; 
+  font-size: 20px; 
+  width: 100%; 
+  box-sizing: border-box; 
+  min-height: 60px; 
+  box-shadow: 0 0 55px rgba(255, 215, 0, 0.5); 
+  z-index: 10; 
+}
+
+.footer .letra {
+  line-height: 2.5; 
+  color: #FFD700;
+
+}
+
+.menu-item.router-link-active {
+  color:  #FFD700;
+  text-decoration: none; 
+}
+
+.menu-item.router-link-active:hover {
+  color: black;
+  background-color:  #FFD700;
+  text-decoration: none; 
+
+}
+
+
+
+@import "/src/assets/PeliculasComponents.scss";
+@import "/src/assets/PersonajesComponent.scss";
+@import "/src/assets/PlanetasComponents.scss";
+@import "/src/assets/NavesComponents.scss";
