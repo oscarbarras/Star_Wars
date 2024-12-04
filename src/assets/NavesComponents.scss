@@ -1,6 +1,6 @@
 .Naves {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
     justify-content: center;
     align-items: center; 
@@ -29,7 +29,7 @@
   .nombre, .model, .manufacturer, .cost_in_credits, .length, .max_atmosphering_speed, 
   .crew, .passengers, .cargo_capacity, .consumables, .hyperdrive_rating, .population {
     font-family: 'Star Wars', sans-serif;
-    font-size: 1.2em;
+    font-size: 0.8em;
     color: white; 
     margin: 10px 0;
     text-align: left;
@@ -41,7 +41,7 @@
   }
   
   .model, .manufacturer, .cost_in_credits, .length, .max_atmosphering_speed {
-    font-size: 1em; 
+    font-size: 0.8em; 
   }
   
 //   .naves a {

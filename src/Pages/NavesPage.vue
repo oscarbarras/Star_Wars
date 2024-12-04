@@ -21,7 +21,7 @@
     </div>
 
     <div class="divBoton">
-        <button v-if="ahora <=todas " @click="VerMas">Ver Más</button>
+        <button v-if="ahora <=todas " @click="cargarNaves">Ver Más</button>
     </div>
 </template>
 
@@ -30,15 +30,31 @@ import { onMounted, ref } from 'vue';
 import NavesComponent from '@/components/NavesComponent.vue';
 
 const Naves=ref([]);
+const ahora=ref(1);
+const todas=9;
 
-onMounted(()=>{
-    fetch("https://swapi.dev/api/starships")
-        .then((response)=>response.json())
-        .then((data)=>{
-            Naves.value=data.results;
-        })
-        .catch((error)=>{
-            console.error("Error",error)
-    });
+
+const cargarNaves = async () => {
+  if (ahora.value > todas) return;
+
+  try {
+    const response = await fetch(`https://swapi.dev/api/starships?page=${ahora.value}&limit=10`);
+    const data = await response.json();
+    if (data.results) {
+      Naves.value.push(...data.results);
+    }
+    ahora.value++; 
+  } catch (error) {
+    console.error("Error cargando planetas:", error);
+  }
+};
+
+onMounted(() =>{
+  const storedpage = localStorage.getItem('actual');
+  if(storedpage){
+    ahora.value=parseInt(storedpage,10);
+  }
+  cargarNaves();
+
 });
 </script>

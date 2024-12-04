@@ -1,8 +1,11 @@
 <template>
+      <input type="text"v-model="busqueda"
+      placeholder="Busqueda en los personajes" class="buscador"/>
+
     <div class="contenedor-personajes" >
       <div class="Personajes">
         <PersonajesComponent 
-          v-for="(Personaje, index) in Personajes" 
+          v-for="(Personaje, index) in personajesFiltro" 
           :key="Personaje.uid"
           :name="Personaje.name"
           :height="Personaje.height"
@@ -20,18 +23,19 @@
         />        
       </div>
     </div>
-    <div class="divBoton">
-        <button v-if="ahora <=todas " @click="VerMas">Ver Más</button>
-    </div>
+
+      <button class="divBoton" v-if="ahora <=todas " @click="cargarPersonajes">Ver Más</button>
+
   </template>
 
 <script setup>
-import { onMounted, ref } from 'vue';
+import { ref, computed, onMounted } from "vue";
 import PersonajesComponent from '@/components/PersonajesComponent.vue';
 
 const Personajes=ref([]);
 const ahora=ref(1);
 const todas=9;
+const busqueda = ref('');
 
 const obtenerPlaneta = async (url) => {
   try {
@@ -74,5 +78,11 @@ onMounted(() =>{
 
 });
 
+
+const personajesFiltro = computed(() => {
+  return Personajes.value.filter(personaje => 
+    personaje.name.toLowerCase().includes(busqueda.value.toLowerCase())
+  );
+});
 
 </script>

@@ -67,10 +67,35 @@ button {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  max-width: 6%;
+  margin: 0 auto;
 }
 
 button:hover {
   background-color: #ffd700;
   color: #000;
   transform: translateY(-2px);
+}
+
+.buscador {
+  position: relative;
+  font-family: 'Star Jedi', sans-serif; 
+  font-size: 18px;
+  color: #ffcc00;
+  background-color: #000;
+  border: 2px solid #ffcc00;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 90%; 
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 255, 0, 0.8); 
+  transition: all 0.3s ease-in-out;
+  margin: 0 auto; 
+  display: block; 
+}
+
+.buscador::placeholder {
+  color: #ffcc00;
+  opacity: 0.7;
 }

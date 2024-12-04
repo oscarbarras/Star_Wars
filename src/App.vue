@@ -15,43 +15,49 @@
       </nav>
     </header>
 
-    
-    
-<!-- <div class="splide" id="splide">
-  <div class="splide__track">
-    <ul class="splide__list">
-      <li class="splide__slide">
-        <img src="../src/assets/f11.jpg" alt="Imagen 1" class="splide__image">
-      </li>
-
-      <li class="splide__slide">
-        <img src="../src/assets/f2.jpg" alt="Imagen 2" class="splide__image">
-      </li>
-
-      <li class="splide__slide">
-        <img src="../src/assets/f3.jpg" alt="Imagen 3" class="splide__image">
-      </li>
-
-      <li class="splide__slide">
-        <img src="../src/assets/f4.png" alt="Imagen 4" class="splide__image">
-      </li>
-    </ul>
-  </div>
-</div> -->
-
-
     <div class="titulo"></div>
 
     <div class="contenido"></div>
 
       
       <RouterView />
+
+
+    <div class="fondoPantalla">
+      <Splide :options="option" aria-label="carrusel">
+        <SplideSlide>
+          <img class="fondo" src="../src/assets/1FO.jpg" alt="1">
+        </SplideSlide>
+        <SplideSlide>
+          <img class="fondo" src="../src/assets/f2.jpg" alt="2">
+        </SplideSlide>
+        <SplideSlide>
+          <img class="fondo" src="../src/assets/ff2.png" alt="3">
+        </SplideSlide>
+        <SplideSlide>
+          <img class="fondo" src="../src/assets/ff3.png" alt="4">
+        </SplideSlide>
+        <SplideSlide>
+          <img class="fondo" src="../src/assets/ff1.jpg" alt="5">
+        </SplideSlide>
+        <SplideSlide>
+          <img class="fondo" src="../src/assets/f4.png" alt="6">
+        </SplideSlide>
+        <SplideSlide>
+          <img class="fondo" src="../src/assets/FO4.png" alt="7">
+        </SplideSlide>
+        <SplideSlide>
+          <img class="fondo" src="../src/assets/ff4.png" alt="7">
+        </SplideSlide>
+      </Splide>
+    </div>
+      
    
   <footer class="footer">
     <div class="letra">
       <span>STAR WARS</span>
     </div>
-    <div class="letra">
+    <div class="letra1">
       <span>OSCAR B. C. &reg</span>
     </div>
 
@@ -65,22 +71,24 @@
 <script setup>
   import { RouterLink, RouterView } from 'vue-router';
   import { onMounted } from 'vue';
-  import Splide from '@splidejs/splide'; 
+  import { Splide, SplideSlide } from '@splidejs/vue-splide';
 
-// onMounted(() => {
-//   new Splide('#splide', {
-//     type       : 'fade', 
-//     heightRatio: 0.5,
-//     autoplay  : true, 
-//     interval  : 3000, 
-//     pauseOnHover: false, 
-//     arrows: false,
-//     pagination: false,
-//     focus       : 'center',    
-//     perPage     : 1,           
-//     perMove     : 1,    
-//   }).mount();
-// });
+  let option = {
+      type       : 'fade', 
+      heightRatio: 0.5,
+      autoplay  : true, 
+      interval  : 5000, 
+      pauseOnHover: false, 
+      arrows: false,
+      pagination: false,
+      focus       : 'center',    
+      perPage     : 1,           
+      perMove     : 1,
+      rewind: true    
+    };
+
+  onMounted(() => {
+  });
 </script>
 
 <style>
