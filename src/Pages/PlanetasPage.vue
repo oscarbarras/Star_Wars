@@ -1,8 +1,11 @@
 <template>
+    <input type="text"v-model="busqueda"
+    placeholder="Busqueda en los planetas" class="buscador"/>
+
     <div class="contenedor-planetas" >
       <div class="Planetas">
         <PlanetasCpmponent
-          v-for="(Planeta, index) in Planetas" 
+          v-for="(Planeta, index) in planetasFiltro" 
           :key="Planeta.uid"
           :name="Planeta.name"
           :rotation_period="Planeta.rotation_period"
@@ -17,24 +20,49 @@
       </div>
     </div>
     <div class="divBoton">
-        <button v-if="ahora <=todas " @click="VerMas">Ver Más</button>
+        <button v-if="ahora <=todas " @click="cargarPlanetas">Ver Más</button>
     </div>
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue';
+import { ref, computed, onMounted } from "vue";
 import PlanetasCpmponent from '@/components/PlanetasCpmponent.vue';
 
 const Planetas=ref([]);
+const ahora=ref(1);
+const todas=9;
+const busqueda = ref('');
 
-onMounted(()=>{
-    fetch("https://swapi.dev/api/planets")
-        .then((response)=>response.json())
-        .then((data)=>{
-            Planetas.value=data.results;
-        })
-        .catch((error)=>{
-            console.error("Error",error)
-    });
+
+const cargarPlanetas = async () => {
+  if (ahora.value > todas) return;
+
+  try {
+    const response = await fetch(`https://swapi.dev/api/planets?page=${ahora.value}&limit=10`);
+    const data = await response.json();
+    if (data.results) {
+      Planetas.value.push(...data.results);
+    }
+    ahora.value++; 
+  } catch (error) {
+    console.error("Error cargando personajes:", error);
+  }
+};
+
+onMounted(() =>{
+  const storedpage = localStorage.getItem('actual');
+  if(storedpage){
+    ahora.value=parseInt(storedpage,10);
+  }
+  cargarPlanetas();
+
 });
+
+
+const planetasFiltro = computed(() => {
+  return Planetas.value.filter(planeta => 
+  planeta.name.toLowerCase().includes(busqueda.value.toLowerCase())
+  );
+});
+
 </script>

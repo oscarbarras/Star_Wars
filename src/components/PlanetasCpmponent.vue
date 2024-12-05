@@ -1,17 +1,17 @@
 <template>
-        <RouterLink :to="{ name: 'PersonajesPage'}">
-      <div class="personajes">
-        <div class="nombre">Nombre: {{name }}</div>
-        <div class="rotacion">Rotacion: {{ rotation_period }} </div>
-        <div class="orbita">Orbita: {{orbital_period }}</div>
-        <div class="diametro">Diametro: {{diameter }}</div>
-        <div class="climate">Clima: {{climate }}</div>
-        <div class="gravity">Gravedad: {{gravity }}</div>
-        <div class="terrain">Terreno: {{terrain }}</div>
-        <div class="surface_water">Superficie acuatica: {{surface_water }}</div>
-        <div class="population">Poblacion: {{population }}</div>
-      </div>
-    </RouterLink>
+  <RouterLink :to="{ name: 'PlanetasPage'}">
+    <div class="planetas">
+      <div><span class="mio">Nombre:</span> <span class="api">{{ name }}</span></div>
+      <div><span class="mio">Rotación:</span> <span class="api">{{ rotation_period }}</span></div>
+      <div><span class="mio">Órbita:</span> <span class="api">{{ orbital_period }}</span></div>
+      <div><span class="mio">Diámetro:</span> <span class="api">{{ diameter }}</span></div>
+      <div><span class="mio">Clima:</span> <span class="api">{{ climate }}</span></div>
+      <div><span class="mio">Gravedad:</span> <span class="api">{{ gravity }}</span></div>
+      <div><span class="mio">Terreno:</span> <span class="api">{{ terrain }}</span></div>
+      <div><span class="mio">Superficie acuática:</span> <span class="api">{{ surface_water }}</span></div>
+      <div><span class="mio">Población:</span> <span class="api">{{ population }}</span></div>
+    </div>
+  </RouterLink>
 </template>
 
 <script setup>

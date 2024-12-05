@@ -1,4 +1,5 @@
 <template>
+  
     <div class="contenedor-peliculas" >
       <div class="Peliculas">
         <PeliculasComponent 

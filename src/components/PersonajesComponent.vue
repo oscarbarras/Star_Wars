@@ -1,18 +1,19 @@
 <template>
-    <RouterLink :to="{ name: 'PersonajesPage'}">
-      <div class="personajes">
-        <div class="nombre">Nombre: {{name }}</div>
-        <div class="altura">Altura: {{ height }} cm</div>
-        <div class="peso">Peso: {{mass }} kg</div>
-        <div class="color-cabello">Color de pelo: {{hair_color }}</div>
-        <div class="colorPiel">Color de Piel: {{skin_color }}</div>
-        <div class="colorOjos">Color de ojos: {{eye_color }}</div>
-        <div class="nacimiento">Nacimiento: {{birth_year }}</div>
-        <div class="genero">Genero: {{gender }}</div>
-        <div class="planeta">Planeta: {{homeworld }}</div>
-      </div>
-    </RouterLink>
-  </template>
+  <RouterLink :to="{ name: 'PersonajesPage'}">
+    <div class="personajes">
+      <div class="mio">Nombre: <span class="api">{{ name }}</span></div>
+      <div class="mio">Altura: <span class="api">{{ height }} cm</span></div>
+      <div class="mio">Peso: <span class="api">{{ mass }} kg</span></div>
+      <div class="mio">Color de pelo: <span class="api">{{ hair_color }}</span></div>
+      <div class="mio">Color de piel: <span class="api">{{ skin_color }}</span></div>
+      <div class="mio">Color de ojos: <span class="api">{{ eye_color }}</span></div>
+      <div class="mio">Nacimiento: <span class="api">{{ birth_year }}</span></div>
+      <div class="mio">Género: <span class="api">{{ gender }}</span></div>
+      <div class="mio">Planeta: <span class="api">{{ homeworld }}</span></div>
+    </div>
+  </RouterLink>
+</template>
+
   
   <script setup>
   const props = defineProps({

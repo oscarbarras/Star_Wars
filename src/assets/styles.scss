@@ -83,34 +83,20 @@ body {
 .fondoPantalla {
   position: relative;
   width: 100%;
+  max-width: 100%;
   height: 100vh; 
-  overflow: hidden; 
+  overflow: hidden;   
   z-index: -10;
   position: fixed;
 }
 
 
-.splide {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0; 
-}
-
-
 .fondo {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
 }
 
-
-.splide__slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; 
-}
 /// //////////////////////////
 
 .footer {
@@ -154,7 +140,11 @@ body {
 
 
 
+
+
 @import "/src/assets/PeliculasComponents.scss";
 @import "/src/assets/PersonajesComponent.scss";
 @import "/src/assets/PlanetasComponents.scss";
 @import "/src/assets/NavesComponents.scss";
+@import "/src/assets/EspeciesComponents.scss";
+@import "/src/assets/VehiculosComponents.scss";

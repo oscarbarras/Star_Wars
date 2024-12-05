@@ -1,8 +1,11 @@
 <template>
-        <div class="contenedor-naves" >
-      <div class="Naves">
+      <input type="text"v-model="busqueda"
+      placeholder="Busqueda en las naves" class="buscador"/>
+
+      <div class="contenedor-naves" >
+        <div class="Naves">
         <NavesComponent
-          v-for="(Nave, index) in Naves" 
+          v-for="(Nave, index) in navesFiltro" 
           :key="Nave.uid"
           :name="Nave.name"
           :model="Nave.model"
@@ -12,7 +15,7 @@
           :max_atmosphering_speed="Nave.max_atmosphering_speed"
           :crew="Nave.crew"
           :passengers="Nave.passengers"
-          :cargo_capacity="Nave.cargo_capacity"
+          :cargo_capacity="Nave.cargo_capacity" 
           :consumables="Nave.consumables"
           :hyperdrive_rating="Nave.starship_class"
           :population="Nave.population"
@@ -26,12 +29,13 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue';
+import { ref, computed, onMounted } from "vue";
 import NavesComponent from '@/components/NavesComponent.vue';
 
 const Naves=ref([]);
 const ahora=ref(1);
 const todas=9;
+const busqueda = ref('');
 
 
 const cargarNaves = async () => {
@@ -57,4 +61,12 @@ onMounted(() =>{
   cargarNaves();
 
 });
+
+
+const navesFiltro = computed(() => {
+  return Naves.value.filter(nave => 
+  nave.name.toLowerCase().includes(busqueda.value.toLowerCase())
+  );
+});
+
 </script>

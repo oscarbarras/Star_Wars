@@ -26,7 +26,7 @@
     <div class="fondoPantalla">
       <Splide :options="option" aria-label="carrusel">
         <SplideSlide>
-          <img class="fondo" src="../src/assets/1FO.jpg" alt="1">
+          <img class="fondo" src="../src/assets/FO4.png" alt="7">
         </SplideSlide>
         <SplideSlide>
           <img class="fondo" src="../src/assets/f2.jpg" alt="2">
@@ -42,9 +42,6 @@
         </SplideSlide>
         <SplideSlide>
           <img class="fondo" src="../src/assets/f4.png" alt="6">
-        </SplideSlide>
-        <SplideSlide>
-          <img class="fondo" src="../src/assets/FO4.png" alt="7">
         </SplideSlide>
         <SplideSlide>
           <img class="fondo" src="../src/assets/ff4.png" alt="7">

@@ -1,4 +1,5 @@
 <template>
+  
   <RouterLink :to="{ name: 'PeliculasPage', params: { episode_id: episode_id } }">
     <div class="peliculas">
       <div class="pelicula-fecha">{{ release_date }}</div>
