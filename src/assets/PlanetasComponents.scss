@@ -53,6 +53,7 @@
     margin-top: 20px;
     width: 100%; 
     margin-bottom: 5%; 
+    justify-content: center;
   }
   
   button {
@@ -64,7 +65,8 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    max-width: 6%;
+    width: auto; 
+    max-width: 100%;
     margin: 0 auto;
     box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
   }

@@ -10,6 +10,14 @@
       <div class="mio">Nacimiento: <span class="api">{{ birth_year }}</span></div>
       <div class="mio">Género: <span class="api">{{ gender }}</span></div>
       <div class="mio">Planeta: <span class="api">{{ homeworld }}</span></div>
+      <div class="mio">
+          Aparicion en peliculas:
+          <ul>
+            <li v-for="(peli, index) in films" :key="index">
+              <a :href="peli" target="_blank" class="api">{{ peli }}</a>
+            </li>
+          </ul>
+        </div>
     </div>
   </RouterLink>
 </template>
@@ -25,7 +33,8 @@
     eye_color: String,
     birth_year: String,
     gender: String,
-    homeworld: String
+    homeworld: String,
+    films: Array
   });
   </script>
   

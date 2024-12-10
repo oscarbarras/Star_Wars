@@ -8,37 +8,30 @@
 
 .header {
   background-color: #000;
-  padding: 20px 20px;
-  box-shadow: 0 0 55px rgba(255, 215, 0, 0.5); 
+  padding: 20px;
+  box-shadow: 0 0 55px rgba(255, 215, 0, 0.5);
   min-height: 70px;
-  display: flex;
-  align-items: center; 
-  justify-content: space-evenly; 
-  width: 100%;
   z-index: 10;
-}
-
-.menu {
-  display: flex;
-  justify-content: space-between;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  gap: 120px;
 }
 
 .menu-item {
   background-color: transparent;
-  color: #FFD700; 
-  border: 2px solid #FFD700; 
-  font-size: 18px;
-  padding: 10px 20px;
-  cursor: pointer;
+  color: #FFD700;
+  border: 2px solid #FFD700;
+  font-size: 16px;
+  padding: 5px 10px;
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: all 0.3s ease-in-out;
   text-decoration: none;
+  display: block;
 }
+
+.menu-item:hover {
+  background-color: #FFD700;
+  color: #000;
+}
+
 
 .menu-item:hover {
   background-color: #FFD700;
@@ -53,6 +46,7 @@ body {
   width: 100%;
   height: 100%;
   overflow: auto;
+  background: transparent;
 }
 
 .titulo {
@@ -81,37 +75,34 @@ body {
 }
 //////////////////////////////
 .fondoPantalla {
-  position: relative;
-  width: 100%;
-  max-width: 100%;
-  height: 100vh; 
-  overflow: hidden;   
-  z-index: -10;
   position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -10;
+  overflow: hidden;
+  background-color: #000;
 }
-
 
 .fondo {
-  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
   height: auto;
+  min-width: 100%;
+  min-height: 100%;
   object-fit: cover;
+  transform: translate(-50%, -50%);
 }
-
 /// //////////////////////////
 
 .footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;  
-  background-color: #000; 
-  color: #fff; 
-  padding: 0px 5%; 
-  font-size: 20px; 
-  width: 100%; 
-  box-sizing: border-box; 
-  min-height: 60px; 
-  box-shadow: 0 0 55px rgba(255, 215, 0, 0.5); 
-  z-index: 10; 
+  background-color: #000;
+  color: #FFD700;
+  padding: 15px 0;
+  box-shadow: 0 0 55px rgba(255, 215, 0, 0.5);
 }
 
 .footer .letra {
@@ -135,10 +126,15 @@ body {
   color: black;
   background-color:  #FFD700;
   text-decoration: none; 
-
 }
 
-
+@media (max-width: 768px) {
+  .fondo {
+    object-fit: cover; /* Mantén el ajuste completo */
+    width: 100vw;
+    height: 100vh;
+  }
+}
 
 
 

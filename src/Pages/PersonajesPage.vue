@@ -17,14 +17,12 @@
           :gender="Personaje.gender"
           :homeworld="Personaje.homeworld"
           :films="Personaje.films"
-          :species="Personaje.species"
-          :vehicles="Personaje.vehicles"
-          :starships="Personaje.starships"
         />        
       </div>
     </div>
 
-      <button class="divBoton" v-if="ahora <=todas " @click="cargarPersonajes">Ver Más</button>
+      <button class="divBotonPers" v-if="ahora <=todas " @click="cargarPersonajes">Ver Más</button>
+      
 
   </template>
 
@@ -48,6 +46,16 @@ const obtenerPlaneta = async (url) => {
   }
 };
 
+const obtenerPelis = async (url) => {
+  const peliculas = [];
+  for (let peli of url) {
+    const response = await fetch(peli);
+    const nombre = await response.json();
+    peliculas.push(nombre.title);
+  }
+  return peliculas;
+};
+
 const cargarPersonajes = async () => {
   if (ahora.value > todas) return;
 
@@ -56,11 +64,16 @@ const cargarPersonajes = async () => {
     const data = await response.json();
     if (data.results) {
       for (let personaje of data.results) {
-        if (personaje.homeworld) {
-          personaje.homeworld = await obtenerPlaneta(personaje.homeworld);
-        }
+        const [homeworld, films] = await Promise.all([
+          obtenerPlaneta(personaje.homeworld),
+          obtenerPelis(personaje.films)
+        ]);
+
+        personaje.homeworld = homeworld;
+        personaje.films = films;
+
+        Personajes.value.push(personaje);
       }
-      Personajes.value.push(...data.results);
     }
 
     ahora.value++; 
