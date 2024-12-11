@@ -52,3 +52,87 @@
     box-shadow: 0 0 30px rgba(255, 215, 0, 1);
     cursor: pointer;
   }
+
+
+  @media (max-width: 1200px) {
+    .Vehiculos {
+      grid-template-columns: repeat(4, 1fr); 
+    }
+  
+    .vehiculo {
+      padding: 16px; 
+    }
+  
+    .mio, .api {
+      font-size: 0.8em; 
+    }
+  
+    .divBoton {
+      margin-top: 15px;
+      width: 80%; 
+      margin-left: 10%;
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .Vehiculos {
+      grid-template-columns: repeat(3, 1fr); 
+      gap: 15px;
+    }
+  
+    .vehiculo {
+      padding: 14px;
+    }
+  
+    .mio, .api {
+      font-size: 0.8em; 
+    }
+  
+    .divBoton {
+      margin-top: 10px;
+      width: 70%; 
+      margin-left: 15%; 
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .Vehiculos {
+      grid-template-columns: repeat(2, 1fr); 
+      gap: 10px; 
+    }
+  
+    .vehiculo {
+      padding: 12px; 
+    }
+  
+    .mio, .api {
+      font-size: 0.75em;
+    }
+  
+    .divBoton {
+      margin-top: 5px;
+      width: 60%; 
+      margin-left: 20%; 
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .Vehiculos {
+      grid-template-columns: 1fr;
+      gap: 10px; 
+    }
+  
+    .vehiculo {
+      padding: 10px; 
+    }
+  
+    .mio, .api {
+      font-size: 0.7em;
+    }
+  
+    .divBoton {
+      margin-top: 5px;
+      width: 50%;
+      margin-left: 25%; 
+    }
+  }

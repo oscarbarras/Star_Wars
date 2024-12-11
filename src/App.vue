@@ -1,7 +1,33 @@
 <template>
   <div class="app">
+
+  <Splide :options="option" aria-label="carrusel" class="splide-background">
+    <SplideSlide>
+      <img src="../src/assets/FO4.png" alt="Imagen 1" class="img-fluid" />
+    </SplideSlide>
+    <SplideSlide>
+      <img src="../src/assets/f2.jpg" alt="Imagen 2" class="img-fluid" />
+    </SplideSlide>
+    <SplideSlide>
+      <img src="../src/assets/ff2.png" alt="Imagen 3" class="img-fluid" />
+    </SplideSlide>
+    <SplideSlide>
+      <img src="../src/assets/ff3.png" alt="Imagen 4" class="img-fluid" />
+    </SplideSlide>
+    <SplideSlide>
+      <img src="../src/assets/ff1.jpg" alt="Imagen 5" class="img-fluid" />
+    </SplideSlide>
+    <SplideSlide>
+      <img src="../src/assets/f4.png" alt="Imagen 6" class="img-fluid" />
+    </SplideSlide>
+    <SplideSlide>
+      <img src="../src/assets/ff4.png" alt="Imagen 7" class="img-fluid" />
+    </SplideSlide>
+  </Splide>
+
+
     <header class="header">
-      <nav class="container">
+      <nav class="containerHeader">
         <ul class="menu d-flex flex-wrap justify-content-center gap-5">
           <li><RouterLink to="/" class="menu-item">Inicio</RouterLink></li>
           <li><RouterLink to="/Personajes" class="menu-item">Personajes</RouterLink></li>
@@ -20,32 +46,6 @@
       <RouterView />
     </main>
 
-    <div class="fondoPantalla">
-  <Splide :options="option" aria-label="carrusel">
-    <SplideSlide>
-      <img class="fondo" src="../src/assets/FO4.png" alt="Imagen 1">
-    </SplideSlide>
-    <SplideSlide>
-      <img class="fondo" src="../src/assets/f2.jpg" alt="Imagen 2">
-    </SplideSlide>
-    <SplideSlide>
-      <img class="fondo" src="../src/assets/ff2.png" alt="Imagen 3">
-    </SplideSlide>
-    <SplideSlide>
-      <img class="fondo" src="../src/assets/ff3.png" alt="Imagen 4">
-    </SplideSlide>
-    <SplideSlide>
-      <img class="fondo" src="../src/assets/ff1.jpg" alt="Imagen 5">
-    </SplideSlide>
-    <SplideSlide>
-      <img class="fondo" src="../src/assets/f4.png" alt="Imagen 6">
-    </SplideSlide>
-    <SplideSlide>
-      <img class="fondo" src="../src/assets/ff4.png" alt="Imagen 7">
-    </SplideSlide>
-  </Splide>
-</div>
-
     <footer class="footer mt-auto">
       <div class="container d-flex justify-content-between align-items-center">
         <span class="letra">STAR WARS</span>
@@ -57,30 +57,27 @@
 </template>
 
 <script setup>
-  import { RouterLink, RouterView } from 'vue-router';
-  import { onMounted } from 'vue';
-  import { Splide, SplideSlide } from '@splidejs/vue-splide';
+import { RouterLink, RouterView } from 'vue-router';
+import { onMounted } from 'vue';
+import { Splide, SplideSlide } from '@splidejs/vue-splide';
 
-  let option = {
-      type       : 'fade',
-      heightRatio: 1, 
-      heightRatio: 0.5,
-      autoplay  : true, 
-      interval  : 5000, 
-      pauseOnHover: false, 
-      arrows: false,
-      pagination: false,
-      focus       : 'center',    
-      perPage     : 1,           
-      perMove     : 1,
-      rewind: true,
-      cover: true,
-    };
+let option = {
+  type: 'fade',
+  heightRatio: 0.5,
+  autoplay: true,
+  interval: 5000,
+  pauseOnHover: false,
+  arrows: false,
+  pagination: false,
+  focus: 'center',
+  perPage: 1,
+  perMove: 1,
+  rewind: true,
+  cover: true,
+};
 
-  onMounted(() => {
-  });
+onMounted(() => {});
 </script>
-
 <style>
   @import "assets/styles.scss";
 </style>

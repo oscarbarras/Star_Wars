@@ -83,3 +83,79 @@
     text-decoration: none; 
   }
   
+
+
+  @media (max-width: 1200px) {
+    .Planetas {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  
+    .divBoton {
+      margin-left: 45%;
+    }
+  
+    button {
+      max-width: 90%;
+    }
+  
+    .mio, .api {
+      font-size: 0.8em;
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .Planetas {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+  
+    .divBoton {
+      margin-left: 40%;
+    }
+  
+    button {
+      max-width: 80%;
+    }
+  
+    .mio, .api {
+      font-size: 0.8em;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .Planetas {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+  
+    .divBoton {
+      margin-left: 30%;
+    }
+  
+    button {
+      max-width: 70%;
+    }
+  
+    .mio, .api {
+      font-size: 0.75em;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .Planetas {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+  
+    .divBoton {
+      margin-left: 25%;
+    }
+  
+    button {
+      max-width: 60%;
+    }
+  
+    .mio, .api {
+      font-size: 0.7em;
+    }
+  }

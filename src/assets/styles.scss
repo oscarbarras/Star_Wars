@@ -4,14 +4,35 @@
   min-height: 100vh;
 }
 
+.splide {
+  position: fixed !important;
+}
 
+.splide-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.splide-background .splide__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 .header {
+  position: relative;
+  width: 100%;
   background-color: #000;
   padding: 20px;
   box-shadow: 0 0 55px rgba(255, 215, 0, 0.5);
   min-height: 70px;
-  z-index: 10;
+  z-index: 1000;
 }
 
 .menu-item {
@@ -32,14 +53,6 @@
   color: #000;
 }
 
-
-.menu-item:hover {
-  background-color: #FFD700;
-  color: #000;
-  transform: scale(1.1); 
-  box-shadow: 0 0 10px rgba(255, 215, 0, 1);
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -47,23 +60,25 @@ body {
   height: 100%;
   overflow: auto;
   background: transparent;
+  position: relative;
 }
 
 .titulo {
   background-image: url("@/assets/title2.png");
   background-position: center top;
-  margin-top: 1%;
   background-repeat: no-repeat;
-  background-size: 14%; 
-  height: 14vh; 
+  background-size: 14%;
+  height: 14vh;
   position: relative;
-  z-index: 5; 
+  z-index: 5;
 }
 
 .contenido {
   flex: 1;
   position: relative;
-  z-index: 10; 
+  z-index: 10;
+  background-color: transparent;
+  padding-top: 0vh;
 }
 
 *,
@@ -73,30 +88,6 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
-//////////////////////////////
-.fondoPantalla {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: -10;
-  overflow: hidden;
-  background-color: #000;
-}
-
-.fondo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: auto;
-  height: auto;
-  min-width: 100%;
-  min-height: 100%;
-  object-fit: cover;
-  transform: translate(-50%, -50%);
-}
-/// //////////////////////////
 
 .footer {
   background-color: #000;
@@ -106,37 +97,104 @@ body {
 }
 
 .footer .letra {
-  line-height: 2.5; 
+  line-height: 2.5;
   color: #FFD700;
 }
 
 .footer .letra1 {
-  line-height: 2.5; 
+  line-height: 2.5;
   color: #FFD700;
-  margin: 0 auto; 
-  display: block; 
+  margin: 0 auto;
+  display: block;
 }
 
 .menu-item.router-link-active {
-  color:  #FFD700;
-  text-decoration: none; 
+  color: #FFD700;
+  text-decoration: none;
 }
 
 .menu-item.router-link-active:hover {
   color: black;
-  background-color:  #FFD700;
-  text-decoration: none; 
+  background-color: #FFD700;
+  text-decoration: none;
 }
 
+/* Media Queries para diferentes tamaños de pantalla */
+
+/* Para pantallas entre 710px y 768px */
 @media (max-width: 768px) {
-  .fondo {
-    object-fit: cover; /* Mantén el ajuste completo */
-    width: 100vw;
-    height: 100vh;
+  .splide-background {
+    background-image: url("../assets/space.jpg"); /* Imagen de fondo para pantallas menores a 768px */
+    background-size: contain; 
+    height: auto;
+  }
+
+  .splide-background .splide__slide img {
+    object-fit: contain;
+  }
+
+  .titulo {
+    background-size: 40%;
+    height: 30vh;
+  }
+
+  .menu-item {
+    font-size: 14px;
+    padding: 5px 8px;
+  }
+
+  .header {
+    padding: 10px;
   }
 }
 
+/* Para pantallas menores a 710px */
+@media (max-width: 710px) {
+  .splide-background {
+    background-image: url("../assets/space.jpg"); /* Imagen de fondo para pantallas menores a 710px */
+    background-size: cover; 
+    height: 100%;
+  }
+}
 
+/* Para pantallas menores a 600px */
+@media (max-width: 600px) {
+  .titulo {
+    background-size: 50%;
+    height: 40vh;
+  }
+
+  .menu-item {
+    font-size: 12px;
+    padding: 4px 6px;
+  }
+}
+
+/* Para pantallas menores a 400px */
+@media (max-width: 400px) {
+  .titulo {
+    background-size: 60%;
+    height: 50vh;
+  }
+
+  .menu-item {
+    font-size: 10px;
+    padding: 3px 5px;
+  }
+}
+
+/* Para pantallas entre 900px y 1200px */
+@media (max-width: 1200px) {
+  .titulo {
+    background-size: 20%;
+    height: 20vh;
+  }
+
+  .menu-item {
+    font-size: 14px;
+    padding: 4px 8px;
+  }
+}
 
 @import "/src/assets/PeliculasComponents.scss";
 @import "/src/assets/PersonajesComponent.scss";

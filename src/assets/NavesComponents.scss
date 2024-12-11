@@ -48,3 +48,101 @@
   }
   
  
+  @media (max-width: 1200px) {
+    .Naves {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  
+    .mio, .api {
+      font-size: 0.8em;
+    }
+  
+    .naves {
+      padding: 16px;
+    }
+    button {
+      padding: 8px 14px;
+      font-size: 0.9em;
+      max-width: 90%;
+    }
+    .divBoton {
+      margin-top: 15px;
+      width: 80%; 
+      margin-left: 10%; 
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .Naves {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+  
+    .mio, .api {
+      font-size: 0.8em;
+    }
+  
+    .naves {
+      padding: 14px;
+    }
+    button {
+      padding: 8px 12px;
+      font-size: 0.85em;
+      max-width: 80%;
+    }
+    .divBoton {
+      margin-top: 10px;
+      width: 70%; 
+      margin-left: 15%;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .Naves {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+  
+    .mio, .api {
+      font-size: 0.75em;
+    }
+  
+    .naves {
+      padding: 12px;
+    }
+    button {
+      padding: 8px 10px;
+      font-size: 0.8em;
+      max-width: 70%;
+    }
+    .divBoton {
+      margin-top: 5px;
+      width: 60%; 
+      margin-left: 20%; 
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .Naves {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+  
+    .mio, .api {
+      font-size: 0.7em;
+    }
+  
+    .naves {
+      padding: 10px;
+    }
+    button {
+      padding: 6px 12px;
+      font-size: 0.75em;
+      max-width: 60%;
+    }
+    .divBoton {
+      margin-top: 5px;
+      width: 50%; 
+      margin-left: 25%; 
+    }
+  }
