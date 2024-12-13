@@ -7,6 +7,7 @@
     margin: 20px auto;
     justify-items: stretch;
     justify-content: center;
+    animation: slideInLeft 1.5s ease;
   }
 
 
@@ -35,11 +36,15 @@
     transition: transform 0.2s ease, box-shadow 0.3s ease;
     text-decoration: none;
     text-align: left;
+
   }
   
-  .personajes:hover {
+  
+
+  .planetas:hover {
     transform: translateY(-5px);
     box-shadow: 0 0 25px rgba(255, 215, 0, 0.8);
+    animation: heartBeat 1s ease;
   }
   
  

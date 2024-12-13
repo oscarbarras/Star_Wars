@@ -25,32 +25,12 @@
   object-fit: cover;
 }
 
-.header {
-  position: relative;
-  width: 100%;
-  background-color: #000;
-  padding: 20px;
-  box-shadow: 0 0 55px rgba(255, 215, 0, 0.5);
-  min-height: 70px;
-  z-index: 1000;
+#navbarNav{
+  animation: fadeInDownBig 1s ease;
 }
 
-.menu-item {
-  background-color: transparent;
-  color: #FFD700;
-  border: 2px solid #FFD700;
-  font-size: 16px;
-  padding: 5px 10px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 0.3s ease-in-out;
-  text-decoration: none;
-  display: block;
-}
-
-.menu-item:hover {
-  background-color: #FFD700;
-  color: #000;
+.nav-item:hover{
+  animation: heartBeat 1s ease;
 }
 
 body {
@@ -71,7 +51,11 @@ body {
   height: 14vh;
   position: relative;
   z-index: 5;
+  ///////////////////
+  animation: flip 2s ease;
+  //////////////////////
 }
+
 
 .contenido {
   flex: 1;
@@ -94,6 +78,7 @@ body {
   color: #FFD700;
   padding: 15px 0;
   box-shadow: 0 0 55px rgba(255, 215, 0, 0.5);
+  animation: fadeInUpBig 1s ease;
 }
 
 .footer .letra {
@@ -119,12 +104,9 @@ body {
   text-decoration: none;
 }
 
-/* Media Queries para diferentes tamaños de pantalla */
-
-/* Para pantallas entre 710px y 768px */
 @media (max-width: 768px) {
   .splide-background {
-    background-image: url("../assets/space.jpg"); /* Imagen de fondo para pantallas menores a 768px */
+    background-image: url("../assets/space.jpg"); 
     background-size: contain; 
     height: auto;
   }
@@ -148,16 +130,15 @@ body {
   }
 }
 
-/* Para pantallas menores a 710px */
+
 @media (max-width: 710px) {
   .splide-background {
-    background-image: url("../assets/space.jpg"); /* Imagen de fondo para pantallas menores a 710px */
+    background-image: url("../assets/space.jpg");
     background-size: cover; 
     height: 100%;
   }
 }
 
-/* Para pantallas menores a 600px */
 @media (max-width: 600px) {
   .titulo {
     background-size: 50%;
@@ -170,7 +151,7 @@ body {
   }
 }
 
-/* Para pantallas menores a 400px */
+
 @media (max-width: 400px) {
   .titulo {
     background-size: 60%;
@@ -183,7 +164,7 @@ body {
   }
 }
 
-/* Para pantallas entre 900px y 1200px */
+
 @media (max-width: 1200px) {
   .titulo {
     background-size: 20%;
@@ -195,6 +176,8 @@ body {
     padding: 4px 8px;
   }
 }
+
+
 
 @import "/src/assets/PeliculasComponents.scss";
 @import "/src/assets/PersonajesComponent.scss";

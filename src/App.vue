@@ -26,19 +26,42 @@
   </Splide>
 
 
-    <header class="header">
-      <nav class="containerHeader">
-        <ul class="menu d-flex flex-wrap justify-content-center gap-5">
-          <li><RouterLink to="/" class="menu-item">Inicio</RouterLink></li>
-          <li><RouterLink to="/Personajes" class="menu-item">Personajes</RouterLink></li>
-          <li><RouterLink to="/Planetas" class="menu-item">Planetas</RouterLink></li>
-          <li><RouterLink to="/Peliculas" class="menu-item">Películas</RouterLink></li>
-          <li><RouterLink to="/Especies" class="menu-item">Especies</RouterLink></li>
-          <li><RouterLink to="/Vehiculos" class="menu-item">Vehículos</RouterLink></li>
-          <li><RouterLink to="/Naves" class="menu-item">Naves Espaciales</RouterLink></li>
+  <header class="header">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top shadow">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto text-center gap-5 ">
+          <li class="nav-item">
+            <RouterLink to="/" class="nav-link text-warning border border-warning rounded px-3 py-1 ">Inicio</RouterLink>
+          </li>
+          <li class="nav-item">
+            <RouterLink to="/Personajes" class="nav-link text-warning border border-warning rounded px-3 py-1">Personajes</RouterLink>
+          </li>
+          <li class="nav-item">
+            <RouterLink to="/Planetas" class="nav-link text-warning border border-warning rounded px-3 py-1">Planetas</RouterLink>
+          </li>
+          <li class="nav-item">
+            <RouterLink to="/Peliculas" class="nav-link text-warning border border-warning rounded px-3 py-1">Películas</RouterLink>
+          </li>
+          <li class="nav-item">
+            <RouterLink to="/Especies" class="nav-link text-warning border border-warning rounded px-3 py-1">Especies</RouterLink>
+          </li>
+          <li class="nav-item">
+            <RouterLink to="/Vehiculos" class="nav-link text-warning border border-warning rounded px-3 py-1">Vehículos</RouterLink>
+          </li>
+          <li class="nav-item">
+            <RouterLink to="/Naves" class="nav-link text-warning border border-warning rounded px-3 py-1">Naves Espaciales</RouterLink>
+          </li>
         </ul>
-      </nav>
-    </header>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
 
     <div class="titulo"></div>
 

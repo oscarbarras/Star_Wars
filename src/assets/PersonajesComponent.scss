@@ -9,6 +9,7 @@
   margin-bottom: 55px;
   justify-items: stretch;
   justify-content: center;
+  animation: zoomInUp 1.5s ease;
 }
 
 .personajes {
@@ -41,6 +42,7 @@
 .personajes:hover {
   transform: translateY(-5px);
   box-shadow: 0 0 25px rgba(255, 215, 0, 0.8);
+  animation: rubberBand 1s ease;
 }
 
 
@@ -66,6 +68,10 @@ button {
   box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
 }
 
+button:hover{
+  animation: jello 1s ease;
+}
+
 button:hover {
   background-color: #ffd700;
   color: #000;
@@ -89,6 +95,7 @@ button:hover {
   transition: all 0.3s ease-in-out;
   margin: 0 auto; 
   display: block; 
+  animation: zoomInDown 2s ease;
 }
 
 .buscador::placeholder {
