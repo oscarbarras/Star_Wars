@@ -20,13 +20,14 @@
       </div>
     </div>
     <div class="divBoton">
-        <button v-if="ahora <=todas " @click="cargarPlanetas">Ver Más</button>
+        <button v-if="ahora <=todas " @click="confirmarYCargar">Ver Más</button>
     </div>
 </template>
 
 <script setup>
 import { ref, computed, onMounted } from "vue";
 import PlanetasCpmponent from '@/components/PlanetasCpmponent.vue';
+import Swal from 'sweetalert2';
 
 const Planetas=ref([]);
 const ahora=ref(1);
@@ -38,7 +39,7 @@ const cargarPlanetas = async () => {
   if (ahora.value > todas) return;
 
   try {
-    const response = await fetch(`https://swapi.dev/api/planets?page=${ahora.value}&limit=10`);
+    const response = await fetch(`https://swapi.py4e.com/api/planets?page=${ahora.value}&limit=10`);
     const data = await response.json();
     if (data.results) {
       Planetas.value.push(...data.results);
@@ -64,5 +65,28 @@ const planetasFiltro = computed(() => {
   planeta.name.toLowerCase().includes(busqueda.value.toLowerCase())
   );
 });
+
+
+
+const confirmarYCargar = () => {
+  Swal.fire({
+    title: '¿Estás seguro?',
+    text: '¿Quieres cargar más planetas?',
+    icon: 'question',
+    showCancelButton: true,
+    confirmButtonText: 'Sí, cargar',
+    cancelButtonText: 'Cancelar',
+  }).then((result) => {
+    if (result.isConfirmed) {
+      cargarPlanetas(); 
+      Swal.fire({
+        title: 'Cargando...',
+        text: 'Estamos obteniendo más planetas',
+        icon: 'info',
+        confirmButtonText: 'Aceptar',
+      });
+    }
+  });
+};
 
 </script>

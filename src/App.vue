@@ -66,6 +66,7 @@
     <div class="titulo"></div>
 
     <main class="contenido container-fluid">
+
       <RouterView />
     </main>
 
@@ -83,6 +84,9 @@
 import { RouterLink, RouterView } from 'vue-router';
 import { onMounted } from 'vue';
 import { Splide, SplideSlide } from '@splidejs/vue-splide';
+import Swal from 'sweetalert2';
+
+let inicio = false;
 
 let option = {
   type: 'fade',
@@ -99,7 +103,22 @@ let option = {
   cover: true,
 };
 
-onMounted(() => {});
+
+const showAlert = () => {
+  Swal.fire({
+    title: '¡Hola!',
+    text: 'Este es un mensaje de alerta',
+    icon: 'info', 
+    confirmButtonText: 'Aceptar'
+  });
+};
+
+
+onMounted(() => {
+  if (window.location.pathname === '/') {
+    inicio = true;
+  }
+});
 </script>
 <style>
   @import "assets/styles.scss";

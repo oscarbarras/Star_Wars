@@ -23,7 +23,7 @@ import PeliculasComponent from '@/components/PeliculasComponent.vue'
 const Peliculas=ref([]);
 
 onMounted(()=>{
-    fetch("https://swapi.dev/api/films")
+    fetch("https://swapi.py4e.com/api/films")
         .then((response)=>response.json())
         .then((data)=>{
             Peliculas.value=data.results;

@@ -6,6 +6,7 @@ import '@splidejs/splide/dist/css/splide.min.css'
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 import 'bootstrap'; 
 import 'animate.css';
+import Swal from 'sweetalert2';
 
 
 const app = createApp(App)

@@ -8,6 +8,7 @@
     margin: 20px auto 55px;
     justify-items: center;
     justify-content: center;
+    animation: fadeIn 2.5s ease;
   }
 
   .vehiculo {
@@ -51,6 +52,7 @@
     transform: translateY(-5px);
     box-shadow: 0 0 30px rgba(255, 215, 0, 1);
     cursor: pointer;
+    animation: headShake 1s ease;
   }
 
 

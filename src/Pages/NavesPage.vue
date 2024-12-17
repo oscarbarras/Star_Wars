@@ -24,13 +24,14 @@
     </div>
 
     <div class="divBoton">
-        <button v-if="ahora <=todas " @click="cargarNaves">Ver Más</button>
+        <button v-if="ahora <=todas " @click="confirmarYCargar">Ver Más</button>
     </div>
 </template>
 
 <script setup>
 import { ref, computed, onMounted } from "vue";
 import NavesComponent from '@/components/NavesComponent.vue';
+import Swal from 'sweetalert2';
 
 const Naves=ref([]);
 const ahora=ref(1);
@@ -42,7 +43,7 @@ const cargarNaves = async () => {
   if (ahora.value > todas) return;
 
   try {
-    const response = await fetch(`https://swapi.dev/api/starships?page=${ahora.value}&limit=10`);
+    const response = await fetch(`https://swapi.py4e.com/api/starships?page=${ahora.value}&limit=10`);
     const data = await response.json();
     if (data.results) {
       Naves.value.push(...data.results);
@@ -68,5 +69,27 @@ const navesFiltro = computed(() => {
   nave.name.toLowerCase().includes(busqueda.value.toLowerCase())
   );
 });
+
+
+const confirmarYCargar = () => {
+  Swal.fire({
+    title: '¿Estás seguro?',
+    text: '¿Quieres cargar más naves espaciales?',
+    icon: 'question',
+    showCancelButton: true,
+    confirmButtonText: 'Sí, cargar',
+    cancelButtonText: 'Cancelar',
+  }).then((result) => {
+    if (result.isConfirmed) {
+      cargarNaves(); 
+      Swal.fire({
+        title: 'Cargando...',
+        text: 'Estamos obteniendo más naves espaciales',
+        icon: 'info',
+        confirmButtonText: 'Aceptar',
+      });
+    }
+  });
+};
 
 </script>

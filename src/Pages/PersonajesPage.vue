@@ -21,7 +21,7 @@
       </div>
     </div>
 
-      <button class="divBotonPers" v-if="ahora <=todas " @click="cargarPersonajes">Ver Más</button>
+      <button class="divBotonPers" v-if="ahora <=todas "@click="confirmarYCargar">Ver Más</button>
       
 
   </template>
@@ -29,6 +29,8 @@
 <script setup>
 import { ref, computed, onMounted } from "vue";
 import PersonajesComponent from '@/components/PersonajesComponent.vue';
+import Swal from 'sweetalert2';
+
 
 const Personajes=ref([]);
 const ahora=ref(1);
@@ -60,7 +62,7 @@ const cargarPersonajes = async () => {
   if (ahora.value > todas) return;
 
   try {
-    const response = await fetch(`https://swapi.dev/api/people?page=${ahora.value}&limit=10`);
+    const response = await fetch(`https://swapi.py4e.com/api/people?page=${ahora.value}&limit=10`);
     const data = await response.json();
     if (data.results) {
       for (let personaje of data.results) {
@@ -97,5 +99,27 @@ const personajesFiltro = computed(() => {
     personaje.name.toLowerCase().includes(busqueda.value.toLowerCase())
   );
 });
+
+
+const confirmarYCargar = () => {
+  Swal.fire({
+    title: '¿Estás seguro?',
+    text: '¿Quieres cargar más personajes?',
+    icon: 'question',
+    showCancelButton: true,
+    confirmButtonText: 'Sí, cargar',
+    cancelButtonText: 'Cancelar',
+  }).then((result) => {
+    if (result.isConfirmed) {
+      cargarPersonajes(); 
+      Swal.fire({
+        title: 'Cargando...',
+        text: 'Estamos obteniendo más personajes',
+        icon: 'info',
+        confirmButtonText: 'Aceptar',
+      });
+    }
+  });
+};
 
 </script>

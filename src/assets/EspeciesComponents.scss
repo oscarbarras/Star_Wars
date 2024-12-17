@@ -6,6 +6,7 @@
   margin: 20px auto 55px;
   justify-items: center;
   justify-content: center;
+  animation: backInDown 1.5s ease;
 }
 
 .especie {
@@ -47,6 +48,7 @@ li {
   transform: translateY(-5px);
   box-shadow: 0 0 30px rgba(255, 215, 0, 1);
   cursor: pointer;
+  animation: jello 1s ease ;
 }
 
 
